@@ -14,6 +14,10 @@ const resultRoute = require("./src/routes/result");
 const tutorialRoute = require("./src/routes/tutorial");
 const HallRoute = require("./src/routes/Hall");
 const LoginRoute = require("./src/routes/login");
+<<<<<<< HEAD
+=======
+const requestRoute = require("./src/routes/request");
+>>>>>>> 595e9797d1fa1693da7f290cc128e4f8820bb1dd
 
 const app = express();
 dotenv.config();
@@ -34,7 +38,7 @@ mongoose
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("success");
+    res.send("Welcom to BrainTech");
     console.log(process.env.PORT);
 });
 
@@ -49,7 +53,12 @@ app.use("/api/result", resultRoute);
 app.use("/api/tutorial",tutorialRoute);
 app.use("/api/hall", HallRoute);
 app.use("/api/login", LoginRoute);
+<<<<<<< HEAD
+=======
+app.use("/api/request", requestRoute);
+>>>>>>> 595e9797d1fa1693da7f290cc128e4f8820bb1dd
 
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT || 5000, () =>
     console.log(`Server is up and running on PORT ${process.env.PORT}`)
 );
+
